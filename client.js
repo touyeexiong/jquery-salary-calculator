@@ -12,6 +12,9 @@ function allReady() {
     // click to delete specific employee
     $('#employeesTable').on('click', '.deleteBtn', deleteEmployee)
 
+    // appends updated budget to the DOM
+    $(`#totalMonthly`).append(updatedBudget)
+
 };
 
 // deleteBtn Steps
@@ -27,6 +30,7 @@ function deleteEmployee() {
 // retrieve input values
 // append to DOM
 // clear input values
+let totalSalary = 0;
 function submitInfo() {
     console.log('clicked submit');
     let getFirst = $(`#firstInput`).val();
@@ -56,4 +60,24 @@ function submitInfo() {
     getTitle = $(`#titleInput`).val('');
     getSalary = $(`#salaryInput`).val('');
 
+    let addedSalary = [];
+    let totalSalary = sum(addedSalary.push(salary));
+
 }
+
+console.log(totalSalary);
+
+
+// updatedBudget Steps
+// obtain values
+// perform $20000 - (monthly salary)
+function updatedBudget() {
+
+}
+
+// need a function that collects each added salary
+// TEST 1
+// function pushes salary into array?
+    // then uses sum[]
+    // then takes monthlySalary = sum[]/12months
+    // then to find updatedBudget = 20000 - monthlySalary
