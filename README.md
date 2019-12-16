@@ -21,5 +21,3 @@ Thanks to Prime Digital Academy in Minneapolis who equipped and helped me to mak
 
 ## Support
 If you have suggestions or issues, please email me at touyeexiong@gmail.com
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).
