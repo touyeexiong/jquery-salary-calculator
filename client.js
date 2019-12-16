@@ -50,7 +50,7 @@ function submitInfo() {
         <td>${getTitle}</td>
         <td>${salary}</td>
 
-        <td><button class="deleteBtn">DELETE</button></td>
+        <td><button class="deleteBtn btn btn-danger">DELETE</button></td>
         </tr>
     `)
     getFirst = $(`#firstInput`).val('');
