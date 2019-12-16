@@ -13,7 +13,9 @@ function allReady() {
     $('#employeesTable').on('click', '.deleteBtn', deleteEmployee)
 
     // appends updated budget to the DOM
-    $(`#totalMonthly`).append(updatedBudget)
+    $(`#totalMonthly`).append(totalSalary);
+
+  //  totalSalary();
 
 };
 
@@ -30,7 +32,7 @@ function deleteEmployee() {
 // retrieve input values
 // append to DOM
 // clear input values
-let totalSalary = 0;
+let enteredSalary = [];
 function submitInfo() {
     console.log('clicked submit');
     let getFirst = $(`#firstInput`).val();
@@ -41,7 +43,6 @@ function submitInfo() {
     console.log(getFirst);
 
     salary = Number(getSalary);
-    theId = Number(getId);
 
     $(`#employeesTable`).append(`
         <tr>
@@ -49,7 +50,7 @@ function submitInfo() {
         <td>${getLast}</td>
         <td>${getId}</td>
         <td>${getTitle}</td>
-        <td>${getSalary}</td>
+        <td>${salary}</td>
 
         <td><button class="deleteBtn">DELETE</button></td>
         </tr>
@@ -60,24 +61,45 @@ function submitInfo() {
     getTitle = $(`#titleInput`).val('');
     getSalary = $(`#salaryInput`).val('');
 
-    let addedSalary = [];
-    let totalSalary = sum(addedSalary.push(salary));
 
+    enteredSalary.push(salary);
+
+    
 }
 
-console.log(totalSalary);
+function totalSalary() {
+    let count = 0;
+
+    for (let i = 0; i < enteredSalary.length; i++) {
+        count += enteredSalary[i];
+
+    }
+    return count;
+}
+
+// let count = 0;
+// function totalSalary() {
+//     for (let i = 0; i < enteredSalary.length; i++) {
+//         count += enteredSalary[i];
+//     }
+//     return count;
+// }
+
 
 
 // updatedBudget Steps
 // obtain values
 // perform $20000 - (monthly salary)
-function updatedBudget() {
-
-}
+// function updatedBudget() {
+//     let finalTotal = $(`#totalMonthly`).val(count);
+// }
 
 // need a function that collects each added salary
 // TEST 1
 // function pushes salary into array?
-    // then uses sum[]
+    // then find sum[] *Update* can't add sum of [].
     // then takes monthlySalary = sum[]/12months
     // then to find updatedBudget = 20000 - monthlySalary
+
+// TEST 2
+// function that adds together individual salaries as they are submitted on the DOM.
