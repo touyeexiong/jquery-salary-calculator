@@ -13,9 +13,9 @@ function allReady() {
     $('#employeesTable').on('click', '.deleteBtn', deleteEmployee)
 
     // appends updated budget to the DOM
-    $(`#totalMonthly`).append(totalSalary);
+    // $(`#totalMonthly`).append(totalSalary);
 
-  //  totalSalary();
+      totalSalary();
 
 };
 
@@ -64,14 +64,22 @@ function submitInfo() {
 
     enteredSalary.push(salary);
 
-    
+
 }
 
 function totalSalary() {
     let count = 0;
-
     for (let i = 0; i < enteredSalary.length; i++) {
-        count += enteredSalary[i];
+        count += enteredSalary[i] / 12;
+        count = Math.round(count);
+console.log(count);
+
+    }
+    if (count < 20000) {
+        $('#totalMonthly').append(`<h1>${count}</h1>`);
+    }
+    else {
+        $(`#totalMonthly`).append(`<h1 id="overBudget">${count}</h1>`);
 
     }
     return count;

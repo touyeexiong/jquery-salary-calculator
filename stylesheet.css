@@ -5,3 +5,8 @@ h1 {
 #totalMonthly {
     float: right;
 }
+
+#overBudget {
+    color: white;
+    background-color: red;
+}
