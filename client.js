@@ -18,8 +18,6 @@ function allReady() {
 };
 
 // deleteBtn Steps
-//
-// 
 function deleteEmployee() {
     console.log('clicked delete');
     $(this).closest('tr').remove();
@@ -81,22 +79,3 @@ $(`#totalMonthly`).empty();
         $('#totalMonthly').append(`<h1 id="overBudget">Total Monthly: ${monthlyCount}</h1>`);
     }
 }
-
-
-
-// updatedBudget Steps
-// obtain values
-// perform $20000 - (monthly salary)
-// function updatedBudget() {
-//     let finalTotal = $(`#totalMonthly`).val(count);
-// }
-
-// need a function that collects each added salary
-// TEST 1
-// function pushes salary into array?
-    // then find sum[] *Update* can't add sum of [].
-    // then takes monthlySalary = sum[]/12months
-    // then to find updatedBudget = 20000 - monthlySalary
-
-// TEST 2
-// function that adds together individual salaries as they are submitted on the DOM.
